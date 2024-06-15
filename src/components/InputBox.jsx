@@ -1,7 +1,4 @@
 import { useId } from "react";
-
-useId
-
 function InputBox({
   label,
   amount,
