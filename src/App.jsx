@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { InputBox } from "./components";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 import './index.css'
@@ -15,6 +15,12 @@ function App() {
   const BackgroundImage =
     "https://images.pexels.com/photos/19392714/pexels-photo-19392714/free-photo-of-off-road-expedition-through-the-desert.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
   const options = Object.keys(currencyInfo);
+
+//   useEffect(() => {
+//     if(currencyInfo && currencyInfo[to]) {
+//         setConvertedAmount(amount * currencyInfo[to]);   
+//      }
+//   }, [amount, from, to, currencyInfo]);
 
   const swap = () => {
     setFrom(to);
@@ -46,9 +52,8 @@ function App() {
                  label="From" 
                  amount={amount}
                  currencyOptions={options}
-                 onCurrencyChanged={(currency) => setAmount(currency)}
+                 onCurrencyChanged={(currency) => setFrom(currency)}
                  selectCurrency={from}
-                 
                  onAmountChanged={(amount) => setAmount(amount) }
               />
             </div>
