@@ -16,11 +16,11 @@ function App() {
     "https://images.pexels.com/photos/19392714/pexels-photo-19392714/free-photo-of-off-road-expedition-through-the-desert.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
   const options = Object.keys(currencyInfo);
 
-//   useEffect(() => {
-//     if(currencyInfo && currencyInfo[to]) {
-//         setConvertedAmount(amount * currencyInfo[to]);   
-//      }
-//   }, [amount, from, to, currencyInfo]);
+  useEffect(() => {
+    if(currencyInfo && currencyInfo[to]) {
+        setConvertedAmount(amount * currencyInfo[to]);   
+     }
+  }, [amount, from, to, currencyInfo]);
 
   const swap = () => {
     setFrom(to);
